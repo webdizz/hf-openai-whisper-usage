@@ -17,3 +17,13 @@ for file in ./wav/*.wav; do
     ffmpeg -i "$file" -vn -map_metadata -1 -ac 1 -c:a libopus -b:a 12k -f segment -segment_time 600 -application voip "${file%.wav}_%03d.ogg"
 done
 ```
+
+## How to run
+
+### Create `.env` file to set environment variables
+
+```bash
+HF_API_TOKEN=hf_....
+# Whisper large-v2 https://huggingface.co/openai/whisper-large-v2
+HF_API_URL=https://.....endpoints.huggingface.cloud
+```
