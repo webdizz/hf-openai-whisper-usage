@@ -1,0 +1,12 @@
+name: wrll-tadv
+channels:
+  - conda-forge
+  - pytorch-nightly
+dependencies:
+  - pip=23
+  - python=3.11
+  - pytorch
+  - pip:
+    - whisper-cpp-python
+    - python-dotenv-vault
+    - openai-whisper
