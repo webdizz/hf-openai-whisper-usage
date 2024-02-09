@@ -6,7 +6,7 @@ from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv())
 
 parser = argparse.ArgumentParser(
-    description="Script to distribute Azure publish profiles to github repositories"
+    description="Script to transcribe audio files using HuggingFace API from given directory"
 )
 
 parser.add_argument("--dir", type=str, help="Path to dir with audio files")
@@ -41,7 +41,7 @@ def transcribe(filename: str):
         with open(transcription_file, "w") as f:
             f.write(str(transcription))
     else:
-        print("== Error transcribing file: %s" % filename)
+        print("== Error transcribing file: %s due to response %s" % (filename, response.text))
 
 
 def get_files(dir: str):
